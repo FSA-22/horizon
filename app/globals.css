@@ -1,20 +1,17 @@
 @import "tailwindcss";
 
+
 * {
-  margin: 0;
-  padding: 0;
+   margin: 0;
+ /* padding: 0;*/
   box-sizing: border-box;
-  scroll: smooth;
+  scroll-behavior: smooth;
 }
 
 .no-scrollbar::-webkit-scrollbar {
   display: none;
 }
 
-.no-scrollbar {
-  -ms-overflow-style: none; /* IE and Edge */
-  scrollbar-width: none; /* Firefox */
-}
 .glassmorphism {
   background: rgba(255, 255, 255, 0.25);
   backdrop-filter: blur(4px);
@@ -55,7 +52,17 @@
   --ease-fluid: "#054F31";
 }
 
-@utilities {
+.no-scrollbar {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none; /* Chrome, Safari */
+  }
+
+@layer components {
+  
 
   .input-class {
     @apply text-2xl placeholder:text-2xl rounded-lg border border-gray-300 text-gray-900 placeholder:text-gray-500;
@@ -66,7 +73,7 @@
   }
 
   .text_padding10 {
-    @apply text-xl px-4 py-2.5 font-semibold;
+    @apply text-4xl px-4 py-2.5 font-semibold;
   }
 
   .flex-center {
@@ -74,7 +81,7 @@
   }
 
   .header-2 {
-    @apply text-2xl font-semibold text-gray-900;
+    @apply text-lg font-semibold text-gray-900;
   }
 
   .text-10 {
@@ -117,16 +124,19 @@
     @apply text-[36px] leading-[44px];
   }
 
-  /* Home */
   .home {
-    @apply flex w-full flex-row max-xl:max-h-screen max-xl:overflow-y-scroll;
+    @apply flex w-full flex-row max-xl:max-h-screen overflow-hidden max-xl:overflow-y-scroll;
+  }
+
+  .home-content {
+    @apply flex w-full flex-1 flex-col gap-8 px-5 sm:px-8 py-7  overflow-hidden lg:py-12 xl:max-h-screen xl:overflow-y-scroll;
   }
   .home-header {
-    @apply flex flex-col justify-between gap-8;
+    @apply flex flex-col justify-between gap-8 px-10;
   }
 
   .total-balance {
-    @apply flex w-full items-center gap-4 rounded-xl border border-gray-200 p-4 shadow sm:gap-6 sm:p-6;
+    @apply flex w-full items-center gap-4 rounded-xl border border-gray-100 p-4 shadow sm:gap-6 sm:p-6;
   }
 
   .total-balance-chart {
@@ -134,11 +144,11 @@
   }
 
   .total-balance-label {
-    @apply text-xl font-medium text-gray-600;
+    @apply text-[14px] font-medium text-gray-600;
   }
 
   .total-balance-amount {
-    @apply text-4xl lg:text-[30px] flex-1 font-semibold text-gray-900;
+    @apply text-xl lg:text-[30px] flex-1 font-semibold text-gray-900;
   }
 
   .recent-transactions {
@@ -147,10 +157,6 @@
 
   .view-all-btn {
     @apply text-xl rounded-lg border border-gray-300 px-4 py-2.5 font-semibold text-gray-700;
-  }
-
-  .recent-transactions {
-    @apply flex w-full flex-col gap-6;
   }
 
   .recent-transactions-label {
@@ -175,7 +181,7 @@
   }
 
   .profile-img {
-    @apply flex justify-center absolute -top-8 size-24 rounded-full bg-gray-100 border-8 border-white p-2 shadow;
+    @apply flex justify-center absolute top-10 size-22 rounded-full bg-gray-100 border-8 border-white p-2 shadow;
   }
 
   .profile-details {
@@ -221,11 +227,11 @@
   }
 
   .header-box-title {
-    @apply text-4xl lg:text-[30px] font-semibold text-gray-900;
+    @apply text-xl lg:text-[30px] font-semibold text-gray-900;
   }
 
   .header-box-subtext {
-    @apply text-xl lg:text-[16px] font-normal text-gray-600;
+    @apply text-[14px] lg:text-[16px] font-normal text-gray-500;
   }
 
   /* Bank Card */
@@ -381,7 +387,7 @@
   }
 
   .sidebar-link {
-    @apply flex gap-3 items-center py-1 md:p-3 2xl:p-4 rounded-lg justify-center xl:justify-start;
+    @apply flex gap-3 items-center py-1 md:p-3 2xl:p-4 rounded-lg justify-center xl:justify-start hover:bg-blue-200 text-black;
   }
 
   .sidebar-label {
