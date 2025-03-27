@@ -1,48 +1,13 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:is(.dark *));
 
-* {
-   margin: 0;
- /* padding: 0;*/
-  box-sizing: border-box;
-  scroll-behavior: smooth;
-}
 
-.no-scrollbar::-webkit-scrollbar {
-  display: none;
-}
-
-.glassmorphism {
-  background: rgba(255, 255, 255, 0.25);
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
-}
-
-.custom-scrollbar::-webkit-scrollbar {
-  width: 3px;
-  height: 3px;
-  border-radius: 2px;
-}
-
-.custom-scrollbar::-webkit-scrollbar-track {
-  background: #dddddd;
-}
-
-.custom-scrollbar::-webkit-scrollbar-thumb {
-  background: #5c5c7b;
-  border-radius: 50px;
-}
-
-.custom-scrollbar::-webkit-scrollbar-thumb:hover {
-  background: #7878a3;
-}
 
 @theme {
-  --breakpoint-3xl: 120rem;
-  --color-fill-1: rgba(255, 255, 255, 0.1);
   --color-indigo-500: "#6172F3";
   --color-indigo-700: "##3538CD";
-  --color-bankGradient: "#0179FE";
+  --color-bank-gradient: "#0179FE";
   --color-success-25: "#F6FEF9";
   --color-success-50: "#ECFDF3";
   --color-success-100: "#D1FADF";
@@ -50,19 +15,12 @@
   --color-success-700: "#027A48";
   --color-success-100: "#D1FADF";
   --ease-fluid: "#054F31";
-}
 
-.no-scrollbar {
-    -ms-overflow-style: none; /* IE and Edge */
-    scrollbar-width: none; /* Firefox */
-  }
+  --bg-pattern: url('/');
+} 
 
-  .no-scrollbar::-webkit-scrollbar {
-    display: none; /* Chrome, Safari */
-  }
 
 @layer components {
-  
 
   .input-class {
     @apply text-2xl placeholder:text-2xl rounded-lg border border-gray-300 text-gray-900 placeholder:text-gray-500;
@@ -173,7 +131,7 @@
   }
 
   .profile-banner {
-    @apply h-[120px] w-full bg-cover bg-no-repeat;
+    @apply h-[120px] w-full;
   }
 
   .profile {
@@ -181,7 +139,7 @@
   }
 
   .profile-img {
-    @apply flex justify-center absolute top-10 size-22 rounded-full bg-gray-100 border-8 border-white p-2 shadow;
+    @apply flex justify-center absolute -top-8 size-22 rounded-full bg-gray-100 border-8 border-white p-2 shadow;
   }
 
   .profile-details {
@@ -189,7 +147,7 @@
   }
 
   .profile-name {
-    @apply text-4xl font-semibold text-gray-900;
+    @apply text-3xl font-semibold text-blue-950;
   }
 
   .profile-email {
@@ -306,11 +264,11 @@
   }
 
   .form-btn {
-    @apply text-[16px] rounded-lg border border-bankGradient  font-semibold text-white shadow;
+    @apply text-[16px] rounded-lg border border-blue-400  font-semibold text-white shadow;
   }
 
   .form-link {
-    @apply text-xl cursor-pointer font-medium text-bankGradient;
+    @apply text-xl cursor-pointer font-medium text-blue-400;
   }
 
   /* Payment Transfer */

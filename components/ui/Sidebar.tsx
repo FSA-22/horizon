@@ -28,7 +28,7 @@ const Sidebar = ({ user }: SiderbarProps) => {
 
           return (
             <Link
-              href={imgURL}
+              href={route}
               key={label}
               className={cn("sidebar-link", { "bg-blue-400": isActive })}>
               <div className="relative size-6">
