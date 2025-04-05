@@ -11,6 +11,7 @@ import { cn } from "@/lib/utils";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import Footer from "../Footer";
 
 const MobileNavBar = ({ user }: MobileNavProps) => {
   const pathname = usePathname();
@@ -38,7 +39,7 @@ const MobileNavBar = ({ user }: MobileNavProps) => {
               height={34}
               alt="horizon logo"
             />
-            <h1 className="text-[26p]x font-ibm-plex-serif font-bold text-black">
+            <h1 className="text-[26px] font-ibm-plex-serif font-bold text-black">
               Horizon
             </h1>
           </Link>
@@ -53,7 +54,7 @@ const MobileNavBar = ({ user }: MobileNavProps) => {
                   return (
                     <SheetClose asChild key={route}>
                       <Link
-                        href={imgURL}
+                        href={route}
                         key={label}
                         className={cn("sidebar-link", {
                           "bg-blue-400": isActive,
@@ -84,7 +85,7 @@ const MobileNavBar = ({ user }: MobileNavProps) => {
               </nav>
             </SheetClose>
 
-            FOOTER
+            <Footer user={user} type="mobile" />
           </div>
         </SheetContent>
       </Sheet>

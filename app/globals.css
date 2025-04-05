@@ -23,7 +23,7 @@
 @layer components {
 
   .input-class {
-    @apply text-2xl placeholder:text-2xl rounded-lg border border-gray-300 text-gray-900 placeholder:text-gray-500;
+    @apply text-lg placeholder:text-[16px] rounded-lg focus:outline-blue-500 focus:border-blue-500 border-gray-200 text-gray-900 placeholder:text-gray-400 py-6;
   }
 
   .sheet-content {
@@ -260,11 +260,11 @@
   }
 
   .form-message {
-    @apply text-[12px] text-red-500;
+    @apply text-[12px] text-red-400 flex flex-col;
   }
 
   .form-btn {
-    @apply text-[16px] rounded-lg border border-blue-400  font-semibold text-white shadow;
+    @apply text-[24px] rounded-lg border bg-blue-500 border-blue-400  font-semibold text-white py-8;
   }
 
   .form-link {
